@@ -20,7 +20,7 @@ const (
 )
 
 func TestLesson1PrintFunc(t *testing.T) {
-	output := captureOutput(func() { Lesson1PrintFunc("") })
+	output := captureOutput(func() { Lesson1PrintFunc("Bruno") })
 	compare(t, "Hello Bruno, welcome to Lessons in Go", output)
 }
 
