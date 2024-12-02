@@ -24,7 +24,37 @@ func TestLesson1PrintFunc(t *testing.T) {
 	compare(t, "Hello Bruno, welcome to Lessons in Go", output)
 }
 
-func compare(t *testing.T, expected, actual interface{}, _ ...any) bool {
+func TestLesson1TypeAssertion(t *testing.T) {
+	output := Lesson1VarTypes("1")
+	compare(t, nil, output)
+}
+
+func TestLesson1Array(t *testing.T) {
+	defer func() {
+		if r := recover(); r != nil {
+			compare(t, nil, r)
+		}
+	}()
+	err := Lesson1Arrays()
+	compare(t, nil, err)
+}
+
+func TestLesson1Slices(t *testing.T) {
+	output := Lesson1Slices()
+	compare(t, "uno", output)
+}
+
+func TestLesson1Range(t *testing.T) {
+	defer func() {
+		if r := recover(); r != nil {
+			compare(t, []string{"Rosa", "Bruno", "Igor"}, r)
+		}
+	}()
+	output := Lesson1Range()
+	compare(t, []string{"Rosa", "Bruno", "Igor"}, output)
+}
+
+func compare(t *testing.T, expected, actual any, _ ...any) bool {
 	if expected != actual {
 		t.Errorf(`
 		%sThe path to enlightenment is fraught with errors.
