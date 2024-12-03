@@ -21,46 +21,57 @@ const (
 
 func TestLesson1PrintFunc(t *testing.T) {
 	output := captureOutput(func() { Lesson1PrintFunc("Bruno") })
-	compare(t, "Hello Bruno, welcome to Lessons in Go", output)
+	compare(t, "Hello Bruno, welcome to Lessons in Go", output, "underscore hides things")
 }
 
-func TestLesson1TypeAssertion(t *testing.T) {
-	output := Lesson1VarTypes("1")
-	compare(t, nil, output)
+func TestLesson1Variables(t *testing.T) {
+	defer func() {
+		if r := recover(); r != nil {
+			compare(t, nil, r, "arrays have limits")
+		}
+	}()
+	output := Lesson1Variables()
+	compare(t, "Bruno", output, "many ways of declaring a variable, make sure they have the right values")
+}
+
+func TestLesson1AnyType(t *testing.T) {
+	output := Lesson1AnyType("1")
+	compare(t, nil, output, "any is useful, but make sure you assert the right type")
 }
 
 func TestLesson1Array(t *testing.T) {
 	defer func() {
 		if r := recover(); r != nil {
-			compare(t, nil, r)
+			compare(t, nil, r, "arrays have limits")
 		}
 	}()
 	err := Lesson1Arrays()
-	compare(t, nil, err)
+	compare(t, nil, err, "you have found an alternative path, but try modifying the bounds first")
 }
 
 func TestLesson1Slices(t *testing.T) {
 	output := Lesson1Slices()
-	compare(t, "uno", output)
+	compare(t, "uno", output, "a slice of a slice is still a slice")
 }
 
 func TestLesson1Range(t *testing.T) {
 	defer func() {
 		if r := recover(); r != nil {
-			compare(t, []string{"Rosa", "Bruno", "Igor"}, r)
+			compare(t, []string{"Rosa", "Bruno", "Igor"}, r, "declaration is not initialization")
 		}
 	}()
 	output := Lesson1Range()
-	compare(t, []string{"Rosa", "Bruno", "Igor"}, output)
+	compare(t, []string{"Rosa", "Bruno", "Igor"}, output, "range is useful, but not in this scenario. do you know why?")
 }
 
-func compare(t *testing.T, expected, actual any, _ ...any) bool {
+func compare(t *testing.T, expected, actual any, hint string) bool {
 	if expected != actual {
 		t.Errorf(`
 		%sThe path to enlightenment is fraught with errors.
+		Hint: %s%s
 		%sExpected: %s%q
 		%sBut found: %s%q
-		%sReflect on this and try again.%s`, Green, Blue, Reset, expected, Red, Reset, actual, Cyan, Reset)
+		%sReflect on this and try again.%s`, Green, Reset, hint, Blue, Reset, expected, Red, Reset, actual, Cyan, Reset)
 		return false
 	}
 	t.Log("You have successfully passed this test, congratulations.")

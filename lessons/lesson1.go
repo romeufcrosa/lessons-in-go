@@ -9,7 +9,18 @@ func Lesson1PrintFunc(_ string) {
 	fmt.Printf("Hello %s, welcome to Lessons in Go", "")
 }
 
-func Lesson1VarTypes(v1 any) error {
+func Lesson1Variables() string {
+	var b = "B"
+	var r, u string = "r", "u"
+
+	var n string
+
+	o := "o"
+
+	return b + r + u + n + o
+}
+
+func Lesson1AnyType(v1 any) error {
 	err := checkType(v1)
 	if err != nil {
 		return err
@@ -53,7 +64,7 @@ func Lesson1Range() []string {
 	return names
 }
 
-func checkType(value interface{}) error {
+func checkType(value any) error {
 	_, ok := value.(int)
 	// Change int to the expected type
 	if !ok {
