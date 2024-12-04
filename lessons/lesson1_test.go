@@ -64,6 +64,55 @@ func TestLesson1Range(t *testing.T) {
 	compare(t, []string{"Rosa", "Bruno", "Igor"}, output, "range is useful, but not in this scenario. do you know why?")
 }
 
+func TestLesson1IfsAndElses(t *testing.T) {
+	output := captureOutput(func() { Lesson1IfsAndElses(10) })
+	compare(t, "10 is even\n10 has two digits\n", output, "if branches can get confusing, maybe there is also one missing?")
+}
+
+func TestLesson1Switch(t *testing.T) {
+	output := Lesson1Switches(1)
+	compare(t, "Monday", output, "Monday is the worst")
+	output = Lesson1Switches(8)
+	compare(t, "Invalid day", output, "that is weird, weeks don't have 8 days")
+}
+
+func TestLesson1SwitchingTypes(t *testing.T) {
+	compare(t, "Negative number", Lesson1SwitchingTypes(-5), "")
+	compare(t, "Zero", Lesson1SwitchingTypes(0), "")
+	compare(t, "Positive number", Lesson1SwitchingTypes(10), "")
+	compare(t, "Empty string", Lesson1SwitchingTypes(""), "")
+	compare(t, "Non-empty string", Lesson1SwitchingTypes("hello"), "")
+	compare(t, "True", Lesson1SwitchingTypes(true), "")
+	compare(t, "False", Lesson1SwitchingTypes(false), "")
+	compare(t, "Nil value", Lesson1SwitchingTypes(nil), "")
+	compare(t, "Floating-point number", Lesson1SwitchingTypes(3.14), "in the old days computers had a dedicated processor just to make FP calculations")
+	compare(t, "Complex number", Lesson1SwitchingTypes(1+2i), "oops, I think I forgot complex numbers")
+}
+
+func TestLesson1Maps(t *testing.T) {
+	grades := map[string]int{
+		"Bruno": 15,
+		"Igor":  12,
+	}
+
+	// Test adding a new student
+	result := Lesson1Maps(grades, "add", "Romeu", 10)
+	compare(t, "Added Romeu with grade 10", result, "")
+
+	// Test updating an existing student
+	result = Lesson1Maps(grades, "update", "Bruno", 16)
+	compare(t, "Updated Bruno to grade 16", result, "")
+
+	// Test updating a non-existing student (should fail)
+	result = Lesson1Maps(grades, "update", "Margarida", 18)
+	compare(t, "Student Margarida not found", result, "I don't remember creating Margarida")
+
+	// Test getting a non-existing student's grade (should fail)
+	result = Lesson1Maps(grades, "get", "Margarida", 0)
+	compare(t, "Student Margarida not found", result, "still don't think Margarida actually exists")
+
+}
+
 func compare(t *testing.T, expected, actual any, hint string) bool {
 	if expected != actual {
 		t.Errorf(`
