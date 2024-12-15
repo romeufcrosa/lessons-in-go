@@ -157,6 +157,37 @@ func Lesson1Maps(grades map[string]int, operation string, student string, grade 
 	return result
 }
 
+func Lesson1VariadicFunction(nums ...int) int {
+	total := 0
+	for i := 0; i <= len(nums); i++ {
+		total += nums[i]
+	}
+	return total
+}
+
+func Lesson1ClosuresSum(numbers []int) int {
+	sum := 0
+	for _, num := range numbers {
+		func(n int) {
+			sum += n
+		}(num + 1)
+	}
+	return sum
+}
+
+func Lesson1ClosuresMultiplier(factor int) func(int) int {
+	return func(x int) int {
+		return x + factor
+	}
+}
+
+func Lesson1ClosuresCalculate(a, b int) (int, error) {
+	if b == 0 {
+		return 0, errors.New("division by zero")
+	}
+	return a / b, nil
+}
+
 func checkType(value any) error {
 	_, ok := value.(int)
 	// Change int to the expected type

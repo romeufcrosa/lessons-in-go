@@ -40,10 +40,11 @@ go test -run ^TestLesson1 lessons-in-go/lessons
 ```
 
 This lessons focus on teaching you the basic building blocks of the Go language:
-- Declaring functions and variables
+- Variables
+- Functions
 - Type Assertion
-- Arrays and Slices
-- For vs Range
+- Arrays, Slices and Maps
+- For, Ranges and Switches
 - 
 
 To pass the lesson you will have to now how to declare funcs and variables, primitive types, what is different between

@@ -113,6 +113,53 @@ func TestLesson1Maps(t *testing.T) {
 
 }
 
+func TestLesson1VariadicFunctions(t *testing.T) {
+	tests := []struct {
+		input    []int
+		expected int
+	}{
+		{[]int{1, 2, 3}, 6},
+		{[]int{4, 5, 6, 7}, 22},
+		{[]int{}, 0},
+	}
+
+	for _, test := range tests {
+		defer func() {
+			if r := recover(); r != nil {
+				printFailure(t, test.expected, r.(error).Error(), "variadic or not, a slice is still a slice")
+			}
+		}()
+		result := Lesson1VariadicFunction(test.input...)
+		compare(t, test.expected, result, "check the error")
+	}
+}
+
+func TestLesson1Closures(t *testing.T) {
+	numbers := []int{1, 2, 3, 4, 5}
+	expectedSum := 15
+	actualSum := Lesson1ClosuresSum(numbers)
+
+	compare(t, expectedSum, actualSum, "")
+
+	double := Lesson1ClosuresMultiplier(2)
+	triple := Lesson1ClosuresMultiplier(3)
+
+	expectedDouble := 10
+	actualDouble := double(5)
+	compare(t, expectedDouble, actualDouble, "")
+
+	expectedTriple := 15
+	actualTriple := triple(5)
+	compare(t, expectedTriple, actualTriple, "")
+
+	_, err := Lesson1ClosuresCalculate(10, 0)
+	compare(t, nil, err.Error(), "")
+
+	expectedResult := 100
+	actualResult, _ := Lesson1ClosuresCalculate(20, 5)
+	compare(t, expectedResult, actualResult, "")
+}
+
 func compare(t *testing.T, expected, actual any, hint string) bool {
 	if expected != actual {
 		t.Errorf(`
@@ -125,6 +172,15 @@ func compare(t *testing.T, expected, actual any, hint string) bool {
 	}
 	t.Log("You have successfully passed this test, congratulations.")
 	return true
+}
+
+func printFailure(t *testing.T, expected, actual any, hint string) {
+	t.Errorf(`
+		%sThe path to enlightenment is fraught with errors.
+		Hint: %s%s
+		%sExpected: %s%v
+		%sBut found: %s%v
+		%sReflect on this and try again.%s`, Green, Reset, hint, Blue, Reset, expected, Red, Reset, actual, Cyan, Reset)
 }
 
 func captureOutput(f func()) string {
