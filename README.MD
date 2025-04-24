@@ -33,13 +33,13 @@ but for now please follow the individual instructions.
 
 ### Lesson One: Basics
 
-**Status**: In Progress
+**Status**: Complete
 
 ```
 go test -run ^TestLesson1 lessons-in-go/lessons
 ```
 
-This lessons focus on teaching you the basic building blocks of the Go language:
+This lesson focuses on teaching you the basic building blocks of the Go language:
 - Variables
 - Functions
 - Type Assertion
@@ -50,4 +50,94 @@ This lessons focus on teaching you the basic building blocks of the Go language:
 To pass the lesson you will have to now how to declare funcs and variables, primitive types, what is different between
 arrays and slices as well as what is different between for and range.
 
-### Lesson Two: TBD
+### Lesson Two: Intermediate
+
+**Status**: Complete
+
+```
+go test -run ^TestLesson2 lessons-in-go/lessons
+```
+
+This lesson focuses on teaching you more advanced topics of Go, like:
+
+- Recursion
+- Pointers
+- Interfaces
+- Enums
+- Structs
+- Generics
+- Iterators
+- Errors
+
+### Lesson Three: Advanced
+
+**Status**: In Progress
+
+```
+go test -run ^TestLesson3 lessons-in-go/lessons
+```
+
+This lesson focuses on teaching you even more advanced topics of Go, like:
+
+- Goroutines
+- Channels
+- Selects
+- Timeout
+- Timers & Tickers
+- Worker Pools
+- WaitGroups
+
+### Lesson Four: Expert
+
+**Status**: TO DO
+
+```
+go test -run ^TestLesson4 lessons-in-go/lessons
+```
+
+This lesson focuses on teaching you deeper and more expert level topics of Go, like:
+
+- Rate limiting
+- Atomic Counters
+- Mutexes
+- Stateful Goroutines
+- Sorting
+- Panic, Defer, Recover
+- Advanced Strings, Templates, Regexes
+- Other Formats: JSON, XML
+
+### Lesson Five: Master
+
+**Status**: TO DO
+
+```
+go test -run ^TestLesson5 lessons-in-go/lessons
+```
+
+This lesson focuses on teaching you very specific topics of Go for truly mastering the language, like:
+
+- Time
+- Randomizing
+- Parsing
+- Encoding
+- File Handling
+- Embed Directive
+- Testing and Benchmarking
+
+### Lesson Six: Bonus Round
+
+**Status**: TO DO
+
+```
+go test -run ^TestLesson6 lessons-in-go/lessons
+```
+
+I decided to write this lesson to give a different challenge more focused on real-world applications
+
+- CLI
+- Env Vars
+- Logging
+- HTTP Client/Server
+- Context
+- Processes
+- Signals & Exits
