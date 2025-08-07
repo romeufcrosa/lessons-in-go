@@ -3,9 +3,21 @@
 ## Intro
 
 Lessons in Go(lang) was a project I started to convince my friend and colleague Bruno on the virtues of the Go programming
-language.
+l### 11. Real-World Applications and Project Integration
 
-I wanted to convince him to have a look and I remembered how I had enjoyed the *Ruby Koans* when I was first introduced to
+**Topics Covered:**
+- File I/O: reading from and writing to files.
+- Networking basics (e.g., building a simple web server using the `net/http` package).
+- Building command-line applications with Go's flag parsing and package organization.
+- Integrating multiple lessons into a cohesive, larger project.
+
+**Koan Focus:**
+- A "final koan" where multiple aspects come together. For example, a small CLI tool with unit tests covering error handling, file access, and concurrent operations, which requires learners to refactor and correct the code to satisfy all requirements.
+
+**Command to run:**
+```bash
+go test ./koans/lesson11 -v
+```I wanted to convince him to have a look and I remembered how I had enjoyed the *Ruby Koans* when I was first introduced to
 it. So I decided to challenge myself to create a similar approach using Go.
 
 All created tests are failing, it is your mission to discover what causes it, change it, run the test again and see if
@@ -15,6 +27,11 @@ You will find many lessons in this repository, I will go more in detail into eac
 thank you for checking this out, hopefully you find this at least entertaining if not useful.
 
 All the best on your Go voyage ;)
+
+## Installing Go
+
+Installing Golang on your machine is pretty straightforward, just go [here](https://go.dev/doc/install) and choose the
+architecture (Windows, Linux, macOS, etc) that matches your machine.
 
 ## How to use them
 
@@ -29,115 +46,134 @@ I'm considering if I add hints or not, I guess it might depend on each test.
 I'm thinking in the future of using a Makefile or having main as an entrypoint so the lessons can be run from the binary,
 but for now please follow the individual instructions.
 
-## Lessons
+## Koans
 
-### Lesson One: Basics
+### 1. Introduction and Setup
 
-**Status**: Complete
+**Topics Covered:**
+- Writing the classic “Hello, World!” program.
+- Running your first program.
 
-```
-go test -run ^TestLesson1 lessons-in-go/lessons
-```
+**Koan Focus:**
+- A minimal “Hello, World!” program with deliberate errors (syntax or setup issues) that learners must correct to display “Hello, World!”.
 
-This lesson focuses on teaching you the basic building blocks of the Go language:
-- Variables
-- Functions
-- Type Assertion
-- Arrays, Slices and Maps
-- For, Ranges and Switches
-- 
+---
 
-To pass the lesson you will have to now how to declare funcs and variables, primitive types, what is different between
-arrays and slices as well as what is different between for and range.
+### 2. Basic Syntax and Data Types
 
-### Lesson Two: Intermediate
+**Topics Covered:**
+- Variables, constants, and basic types (integers, floats, booleans, and strings).
+- Type conversions and simple arithmetic or logical operations.
 
-**Status**: Complete
+**Koan Focus:**
+- Small programs where incorrect variable declarations or type mismatches cause compile-time or logical errors that the user must fix.
 
-```
-go test -run ^TestLesson2 lessons-in-go/lessons
-```
+---
 
-This lesson focuses on teaching you more advanced topics of Go, like:
+### 3. Control Flow and Loops
 
-- Recursion
-- Pointers
-- Interfaces
-- Enums
-- Structs
-- Generics
-- Iterators
-- Errors
+**Topics Covered:**
+- Conditional statements: `if`, `else`, and `switch`.
+- The `for` loop as Go’s only loop mechanism.
+- Introduction to `defer` for simple scheduling tasks.
 
-### Lesson Three: Advanced
+**Koan Focus:**
+- Code puzzles where loops run off by one or branch conditions are miswritten, with adjustments required in the control structure to pass tests.
 
-**Status**: In Progress
+---
 
-```
-go test -run ^TestLesson3 lessons-in-go/lessons
-```
+### 4. Composite Data Structures
 
-This lesson focuses on teaching you even more advanced topics of Go, like:
+**Topics Covered:**
+- Arrays and Slices: creation, indexing, slicing, and appending.
+- Using Maps as key-value stores and performing basic operations on strings.
+- Iterating over slices, arrays, and maps with range loops.
 
-- Goroutines
-- Channels
-- Selects
-- Timeout
-- Timers & Tickers
-- Worker Pools
-- WaitGroups
+**Koan Focus:**
+- Examples featuring mishandled array lengths or incorrect slice manipulations that break intended outcomes (e.g., summing elements or printing sequences).
 
-### Lesson Four: Expert
+---
 
-**Status**: TO DO
+### 5. Functions and Packages
 
-```
-go test -run ^TestLesson4 lessons-in-go/lessons
-```
+**Topics Covered:**
+- Declaring functions, handling return values, and managing multiple return values.
+- Variadic functions and anonymous functions (closures).
+- Organizing code into packages and using the import statements following Go’s conventions.
 
-This lesson focuses on teaching you deeper and more expert level topics of Go, like:
+**Koan Focus:**
+- Puzzles where a function’s signature is mismatched or where the wrong number/type of return values is provided. Correcting the package structure or usage resolves the issues.
 
-- Rate limiting
-- Atomic Counters
-- Mutexes
-- Stateful Goroutines
-- Sorting
-- Panic, Defer, Recover
-- Advanced Strings, Templates, Regexes
-- Other Formats: JSON, XML
+---
 
-### Lesson Five: Master
+### 6. Structs, Pointers, and Methods
 
-**Status**: TO DO
+**Topics Covered:**
+- Defining and using structs for creating custom types.
+- Understanding pointers, pointer dereferencing, and the differences between value and pointer semantics.
+- Attaching methods to types (using both pointer and value receivers).
 
-```
-go test -run ^TestLesson5 lessons-in-go/lessons
-```
+**Koan Focus:**
+- Exercises that involve subtle pointer pitfalls (such as nil pointer dereferences) or methods that incorrectly mutate state, prompting learners to fix receiver types and pointer usage.
 
-This lesson focuses on teaching you very specific topics of Go for truly mastering the language, like:
+---
 
-- Time
-- Randomizing
-- Parsing
-- Encoding
-- File Handling
-- Embed Directive
-- Testing and Benchmarking
+### 7. Interfaces and Composition
 
-### Lesson Six: Bonus Round
+**Topics Covered:**
+- Defining interfaces and implementing them with concrete types.
+- Performing type assertions and using type switches.
+- Favoring composition over inheritance by embedding types and promoting method access.
 
-**Status**: TO DO
+**Koan Focus:**
+- Code puzzles where interfaces are improperly satisfied or type assertions fail, challenging learners to correct the contract between types and interfaces.
 
-```
-go test -run ^TestLesson6 lessons-in-go/lessons
-```
+---
 
-I decided to write this lesson to give a different challenge more focused on real-world applications
+### 8. Error Handling, Defer, and Recovery
 
-- CLI
-- Env Vars
-- Logging
-- HTTP Client/Server
-- Context
-- Processes
-- Signals & Exits
+**Topics Covered:**
+- Using the `error` type idiomatically, along with creating custom errors.
+- Employing `defer` for scheduling cleanup tasks.
+- Handling errors gracefully with `panic`/`recover` and adopting error-wrapping practices.
+
+**Koan Focus:**
+- Test cases that intentionally mishandle error returns or defer functions in the wrong order, leading learners to restructure their error handling logic.
+
+---
+
+### 9. Concurrency and Synchronization
+
+**Topics Covered:**
+- An introduction to goroutines for lightweight concurrent execution.
+- Channel operations, exploring unbuffered versus buffered channels and the use of `select`.
+- Advanced synchronization topics including mutexes, WaitGroups, and context (for cancellation and timeout).
+
+**Koan Focus:**
+- Concurrency puzzles in which race conditions, deadlocks, or channel mismanagement cause test failures until learners reorganize the concurrency logic.
+
+---
+
+### 10. Advanced Concepts and Patterns
+
+**Topics Covered:**
+- Generics (for Go 1.18+ and later) for creating flexible and type-safe code.
+- Reflection for runtime type inspection.
+- Functional programming aspects: first-class functions and higher-order functions.
+- Object oriented programming aspects: structs instead of classes, composition instead of inheritance and polymorphism
+
+**Koan Focus:**
+- Challenges where generic functions misbehave or reflection produces unexpected behavior. This stage can emphasize writing tests first and then refactoring the solution accordingly.
+
+---
+
+### 11. Real-World Applications and Project Integration
+
+**Topics Covered:**
+- File I/O: reading from and writing to files.
+- Networking basics (e.g., building a simple web server using the `net/http` package).
+- Building command-line applications with Go’s flag parsing and package organization.
+- Integrating multiple lessons into a cohesive, larger project.
+
+**Koan Focus:**
+- A “final koan” where multiple aspects come together. For example, a small CLI tool with unit tests covering error handling, file access, and concurrent operations, which requires learners to refactor and correct the code to satisfy all requirements.

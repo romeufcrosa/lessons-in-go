@@ -1,4 +1,4 @@
-package lessons
+package testutils
 
 import (
 	"bytes"
@@ -20,7 +20,7 @@ const (
 	White  = "\033[37m"
 )
 
-func compare(t *testing.T, expected, actual any, hint string) bool {
+func Compare(t *testing.T, expected, actual any, hint string) bool {
 	if !reflect.DeepEqual(expected, actual) {
 		t.Errorf(`
         %sThe path to enlightenment is fraught with errors.
@@ -34,7 +34,7 @@ func compare(t *testing.T, expected, actual any, hint string) bool {
 	return true
 }
 
-func compareDeep(t *testing.T, expected, actual interface{}, msg string) {
+func CompareDeep(t *testing.T, expected, actual interface{}, msg string) {
 	if !reflect.DeepEqual(expected, actual) {
 		t.Errorf(`
 		%sThe path to enlightenment is fraught with errors.
@@ -45,10 +45,9 @@ func compareDeep(t *testing.T, expected, actual interface{}, msg string) {
 		return
 	}
 	t.Log("You have successfully passed this test, congratulations.")
-	return
 }
 
-func printFailure(t *testing.T, expected, actual any, hint string) {
+func PrintFailure(t *testing.T, expected, actual any, hint string) {
 	t.Errorf(`
 		%sThe path to enlightenment is fraught with errors.
 		Hint: %s%s
@@ -57,7 +56,7 @@ func printFailure(t *testing.T, expected, actual any, hint string) {
 		%sReflect on this and try again.%s`, Green, Reset, hint, Blue, Reset, expected, Red, Reset, actual, Cyan, Reset)
 }
 
-func captureOutput(f func()) string {
+func CaptureOutput(f func()) string {
 	r, w, _ := os.Pipe()
 	original := os.Stdout
 	os.Stdout = w
