@@ -3,22 +3,9 @@
 ![alt text](assets/image.png)
 ## Intro
 
-Lessons in Go(lang) was a project I started to convince my friend and colleague Bruno on the virtues of the Go programming
-l### 11. Real-World Applications and Project Integration
+Lessons in Go(lang) was a project I started to convince my friend and colleague Bruno on the virtues of the Go programming language.
 
-**Topics Covered:**
-- File I/O: reading from and writing to files.
-- Networking basics (e.g., building a simple web server using the `net/http` package).
-- Building command-line applications with Go's flag parsing and package organization.
-- Integrating multiple lessons into a cohesive, larger project.
-
-**Koan Focus:**
-- A "final koan" where multiple aspects come together. For example, a small CLI tool with unit tests covering error handling, file access, and concurrent operations, which requires learners to refactor and correct the code to satisfy all requirements.
-
-**Command to run:**
-```bash
-go test ./koans/lesson11 -v
-```I wanted to convince him to have a look and I remembered how I had enjoyed the *Ruby Koans* when I was first introduced to
+I wanted to convince him to have a look and I remembered how I had enjoyed the *Ruby Koans* when I was first introduced to
 it. So I decided to challenge myself to create a similar approach using Go.
 
 All created tests are failing, it is your mission to discover what causes it, change it, run the test again and see if
@@ -40,7 +27,7 @@ In each lesson I will include the command that needs to be executed in the termi
 Of course you can do it directly via VS Code (or another editor).
 
 The output will be something like this:
-![screenshot](sample_screenshot.png)
+![screenshot](assets/sample_screenshot.png)
 
 I'm considering if I add hints or not, I guess it might depend on each test.
 
@@ -173,8 +160,8 @@ but for now please follow the individual instructions.
 **Topics Covered:**
 - File I/O: reading from and writing to files.
 - Networking basics (e.g., building a simple web server using the `net/http` package).
-- Building command-line applications with Go’s flag parsing and package organization.
+- Building command-line applications with Go's flag parsing and package organization.
 - Integrating multiple lessons into a cohesive, larger project.
 
 **Koan Focus:**
-- A “final koan” where multiple aspects come together. For example, a small CLI tool with unit tests covering error handling, file access, and concurrent operations, which requires learners to refactor and correct the code to satisfy all requirements.
+- A "final koan" where multiple aspects come together. For example, a small CLI tool with unit tests covering error handling, file access, and concurrent operations, which requires learners to refactor and correct the code to satisfy all requirements.
