@@ -1,5 +1,6 @@
 # Lessons in Go(lang)
 
+![alt text](assets/image.png)
 ## Intro
 
 Lessons in Go(lang) was a project I started to convince my friend and colleague Bruno on the virtues of the Go programming
