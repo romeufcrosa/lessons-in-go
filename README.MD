@@ -1,6 +1,29 @@
+<!-- TOC start (generated with https://github.com/derlin/bitdowntoc) -->
+
+- [Lessons in Go(lang)](#lessons-in-golang)
+  - [Intro](#intro)
+  - [Installing Go](#installing-go)
+  - [How to use them](#how-to-use-them)
+  - [Koans](#koans)
+    - [1. Introduction and Setup](#1-introduction-and-setup)
+    - [2. Basic Syntax and Data Types](#2-basic-syntax-and-data-types)
+    - [3. Control Flow and Loops](#3-control-flow-and-loops)
+    - [4. Composite Data Structures](#4-composite-data-structures)
+    - [5. Functions and Packages](#5-functions-and-packages)
+    - [6. Structs, Pointers, and Methods](#6-structs-pointers-and-methods)
+    - [7. Interfaces and Composition](#7-interfaces-and-composition)
+    - [8. Error Handling, Defer, and Recovery](#8-error-handling-defer-and-recovery)
+    - [9. Concurrency and Synchronization](#9-concurrency-and-synchronization)
+    - [10. Advanced Concepts and Patterns](#10-advanced-concepts-and-patterns)
+    - [11. Real-World Applications and Project Integration](#11-real-world-applications-and-project-integration)
+
+<!-- TOC end -->
+
+<!-- TOC --><a name="lessons-in-golang"></a>
 # Lessons in Go(lang)
 
 ![alt text](assets/image.png)
+<!-- TOC --><a name="intro"></a>
 ## Intro
 
 Lessons in Go(lang) was a project I started to convince my friend and colleague Bruno on the virtues of the Go programming language.
@@ -16,11 +39,13 @@ thank you for checking this out, hopefully you find this at least entertaining i
 
 All the best on your Go voyage ;)
 
+<!-- TOC --><a name="installing-go"></a>
 ## Installing Go
 
 Installing Golang on your machine is pretty straightforward, just go [here](https://go.dev/doc/install) and choose the
 architecture (Windows, Linux, macOS, etc) that matches your machine.
 
+<!-- TOC --><a name="how-to-use-them"></a>
 ## How to use them
 
 In each lesson I will include the command that needs to be executed in the terminal to run that specific lesson.
@@ -34,8 +59,10 @@ I'm considering if I add hints or not, I guess it might depend on each test.
 I'm thinking in the future of using a Makefile or having main as an entrypoint so the lessons can be run from the binary,
 but for now please follow the individual instructions.
 
+<!-- TOC --><a name="koans"></a>
 ## Koans
 
+<!-- TOC --><a name="1-introduction-and-setup"></a>
 ### 1. Introduction and Setup
 
 **Topics Covered:**
@@ -47,6 +74,7 @@ but for now please follow the individual instructions.
 
 ---
 
+<!-- TOC --><a name="2-basic-syntax-and-data-types"></a>
 ### 2. Basic Syntax and Data Types
 
 **Topics Covered:**
@@ -58,6 +86,7 @@ but for now please follow the individual instructions.
 
 ---
 
+<!-- TOC --><a name="3-control-flow-and-loops"></a>
 ### 3. Control Flow and Loops
 
 **Topics Covered:**
@@ -70,6 +99,7 @@ but for now please follow the individual instructions.
 
 ---
 
+<!-- TOC --><a name="4-composite-data-structures"></a>
 ### 4. Composite Data Structures
 
 **Topics Covered:**
@@ -82,6 +112,7 @@ but for now please follow the individual instructions.
 
 ---
 
+<!-- TOC --><a name="5-functions-and-packages"></a>
 ### 5. Functions and Packages
 
 **Topics Covered:**
@@ -94,6 +125,7 @@ but for now please follow the individual instructions.
 
 ---
 
+<!-- TOC --><a name="6-structs-pointers-and-methods"></a>
 ### 6. Structs, Pointers, and Methods
 
 **Topics Covered:**
@@ -106,6 +138,7 @@ but for now please follow the individual instructions.
 
 ---
 
+<!-- TOC --><a name="7-interfaces-and-composition"></a>
 ### 7. Interfaces and Composition
 
 **Topics Covered:**
@@ -118,6 +151,7 @@ but for now please follow the individual instructions.
 
 ---
 
+<!-- TOC --><a name="8-error-handling-defer-and-recovery"></a>
 ### 8. Error Handling, Defer, and Recovery
 
 **Topics Covered:**
@@ -130,6 +164,7 @@ but for now please follow the individual instructions.
 
 ---
 
+<!-- TOC --><a name="9-concurrency-and-synchronization"></a>
 ### 9. Concurrency and Synchronization
 
 **Topics Covered:**
@@ -142,6 +177,7 @@ but for now please follow the individual instructions.
 
 ---
 
+<!-- TOC --><a name="10-advanced-concepts-and-patterns"></a>
 ### 10. Advanced Concepts and Patterns
 
 **Topics Covered:**
@@ -155,6 +191,7 @@ but for now please follow the individual instructions.
 
 ---
 
+<!-- TOC --><a name="11-real-world-applications-and-project-integration"></a>
 ### 11. Real-World Applications and Project Integration
 
 **Topics Covered:**
